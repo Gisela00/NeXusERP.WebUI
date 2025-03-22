@@ -4,6 +4,7 @@ using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250322161321_V2")]
+    partial class V2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,16 +142,16 @@ namespace Infrastructure.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Age = 0,
-                            ConcurrencyStamp = "f24faa09-3e49-4f8f-92dd-437f7a5db348",
+                            ConcurrencyStamp = "c9308ca0-d23a-42df-914d-7e185c33cd59",
                             Email = "rgise06@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "",
                             LastName = "",
                             LockoutEnabled = false,
-                            NormalizedEmail = "rgise06@gmail.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBie6KmK8I2nqbQFhID+BuQ8ICfGl97/1d9mcyTd/UQKKOK4gLk5GQp5pNxRga4E9w==",
+                            NormalizedUserName = "rgise06@gmail.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEB4I6Ak9AKx0ExIluo4ENwLa1tL8i/4wZ2JV6fWHNvf9X/sL9o7ybMxQLwJFhCvkTg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5a90251-bc8b-493d-aa12-f8fec1b0abd3",
+                            SecurityStamp = "ac1670bb-0d85-4c04-89a5-19ab7a4a8bfd",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

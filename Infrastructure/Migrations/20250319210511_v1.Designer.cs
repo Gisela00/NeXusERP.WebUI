@@ -4,6 +4,7 @@ using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250319210511_v1")]
+    partial class v1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,26 +135,6 @@ namespace Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "1",
-                            AccessFailedCount = 0,
-                            Age = 0,
-                            ConcurrencyStamp = "f24faa09-3e49-4f8f-92dd-437f7a5db348",
-                            Email = "rgise06@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "",
-                            LastName = "",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "rgise06@gmail.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBie6KmK8I2nqbQFhID+BuQ8ICfGl97/1d9mcyTd/UQKKOK4gLk5GQp5pNxRga4E9w==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5a90251-bc8b-493d-aa12-f8fec1b0abd3",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
